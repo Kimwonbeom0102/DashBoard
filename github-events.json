@@ -1,5 +1,25 @@
 [
   {
+    "id": "f5397c86f73b15cb602489eb4d6279222348346a",
+    "type": "PushEvent",
+    "repo": {
+      "name": "Kimwonbeom0102/DashBoard",
+      "url": "https://github.com/Kimwonbeom0102/DashBoard"
+    },
+    "payload": {
+      "commits": [
+        {
+          "sha": "f5397c8",
+          "message": "Update update-events.yml"
+        }
+      ]
+    },
+    "created_at": "2026-09-15T19:20:53Z",
+    "actor": {
+      "login": "Kimwonbeom0102"
+    }
+  },
+  {
     "id": "81650d95770ee91e900f01471200f5db75c1441d",
     "type": "PushEvent",
     "repo": {
@@ -75,26 +95,6 @@
       ]
     },
     "created_at": "2026-09-15T18:46:01Z",
-    "actor": {
-      "login": "Kimwonbeom0102"
-    }
-  },
-  {
-    "id": "d2d899b1f5ba258e30e719bb1f75eb8eaa379478",
-    "type": "PushEvent",
-    "repo": {
-      "name": "Kimwonbeom0102/DashBoard",
-      "url": "https://github.com/Kimwonbeom0102/DashBoard"
-    },
-    "payload": {
-      "commits": [
-        {
-          "sha": "d2d899b",
-          "message": "Rename workflow and update commit fetching logic"
-        }
-      ]
-    },
-    "created_at": "2026-09-15T18:36:15Z",
     "actor": {
       "login": "Kimwonbeom0102"
     }
