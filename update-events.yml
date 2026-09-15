@@ -15,12 +15,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Fetch commits from all repos
+      - name: Fetch latest commit per repo
+        env:
+          PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
         run: |
-          python3 << 'EOF'
-          import json, urllib.request
+          python3 - << 'PYEOF'
+          import json, urllib.request, os
 
-          TOKEN = "${{ secrets.PAT_TOKEN }}"
+          TOKEN = os.environ["PAT_TOKEN"]
           USERNAME = "Kimwonbeom0102"
           HEADERS = {
               "Authorization": f"token {TOKEN}",
@@ -34,10 +36,9 @@ jobs:
                   with urllib.request.urlopen(req) as r:
                       return json.loads(r.read())
               except Exception as e:
-                  print(f"Error fetching {url}: {e}")
+                  print(f"Error: {url}: {e}")
                   return []
 
-          # 내 모든 저장소 목록
           repos = fetch("https://api.github.com/user/repos?per_page=100&type=owner")
           print(f"저장소 수: {len(repos)}")
 
@@ -50,42 +51,30 @@ jobs:
                       all_events.append({
                           "id": c["sha"],
                           "type": "PushEvent",
-                          "repo": {
-                              "name": full_name,
-                              "url": f"https://github.com/{full_name}"
-                          },
-                          "payload": {
-                              "commits": [{
-                                  "sha": c["sha"][:7],
-                                  "message": c["commit"]["message"].split("\n")[0]
-                              }]
-                          },
+                          "repo": {"name": full_name, "url": f"https://github.com/{full_name}"},
+                          "payload": {"commits": [{"sha": c["sha"][:7], "message": c["commit"]["message"].split("\n")[0]}]},
                           "created_at": c["commit"]["author"]["date"],
                           "actor": {"login": USERNAME}
                       })
                   except Exception as e:
-                      print(f"Error parsing commit: {e}")
-                      continue
+                      print(f"Parse error: {e}")
 
-          # 날짜순 정렬, 최신 20개
           all_events.sort(key=lambda x: x["created_at"], reverse=True)
 
           with open("github-events.json", "w", encoding="utf-8") as f:
               json.dump(all_events, f, indent=2, ensure_ascii=False)
 
-          print(f"총 {len(all_events)}개 커밋 저장 완료")
-          EOF
+          print(f"총 {len(all_events)}개 레포 저장 완료")
+          PYEOF
 
-            - name: Commit changes
+      - name: Commit changes
         run: |
-          echo "=== 현재 파일 내용 (앞 3줄) ==="
-          head -3 github-events.json
-          echo "=== Git status ==="
-          git status
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add github-events.json
-          echo "=== Staged diff ==="
-          git diff --staged --stat
-          git commit -m "chore: update github commits [skip ci]" || echo "커밋할 내용 없음"
-          git push || echo "푸시할 내용 없음"
+          if git diff --staged --quiet; then
+            echo "변경 없음"
+          else
+            git commit -m "chore: update github commits [skip ci]"
+            git push
+          fi
