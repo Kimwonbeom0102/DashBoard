@@ -1,36 +1,90 @@
-name: Update GitHub Events
+name: Update GitHub Commits
 
 on:
-  push:
-    branches: [main]
-    paths-ignore:
-      - 'github-events.json'   # 데이터 파일 변경으로 인한 무한 루프 방지
   schedule:
-    - cron: '15 * * * *'       # 매시간 15분
-  workflow_dispatch:           # GitHub 웹에서 수동 실행 가능
+    - cron: '15 * * * *'
+  workflow_dispatch:
 
 jobs:
-  update:
+  update-events:
     runs-on: ubuntu-latest
     permissions:
-      contents: write          # 파일 커밋에 필요
+      contents: write
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
-      - name: Fetch GitHub events
+      - name: Fetch commits from all repos
         run: |
-          curl -s \
-            -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
-            -H "Accept: application/vnd.github+json" \
-            "https://api.github.com/users/Kimwonbeom0102/events?per_page=10" \
-            -o github-events.json
-          echo "Fetched $(cat github-events.json | python3 -c 'import json,sys; print(len(json.load(sys.stdin)))') events"
+          python3 << 'EOF'
+          import json, urllib.request
 
-      - name: Commit if changed
+          TOKEN = "${{ secrets.PAT_TOKEN }}"
+          USERNAME = "Kimwonbeom0102"
+          HEADERS = {
+              "Authorization": f"token {TOKEN}",
+              "Accept": "application/vnd.github.v3+json",
+              "User-Agent": "GitHub-Actions"
+          }
+
+          def fetch(url):
+              try:
+                  req = urllib.request.Request(url, headers=HEADERS)
+                  with urllib.request.urlopen(req) as r:
+                      return json.loads(r.read())
+              except Exception as e:
+                  print(f"Error fetching {url}: {e}")
+                  return []
+
+          # 내 모든 저장소 목록
+          repos = fetch("https://api.github.com/user/repos?per_page=100&type=owner&affiliation=owner")
+          print(f"저장소 수: {len(repos)}")
+
+          all_events = []
+          for repo in repos:
+              full_name = repo["full_name"]
+              commits = fetch(f"https://api.github.com/repos/{full_name}/commits?per_page=5&author={USERNAME}")
+              for c in commits:
+                  try:
+                      all_events.append({
+                          "id": c["sha"],
+                          "type": "PushEvent",
+                          "repo": {
+                              "name": full_name,
+                              "url": f"https://github.com/{full_name}"
+                          },
+                          "payload": {
+                              "commits": [{
+                                  "sha": c["sha"][:7],
+                                  "message": c["commit"]["message"].split("\n")[0]
+                              }]
+                          },
+                          "created_at": c["commit"]["author"]["date"],
+                          "actor": {"login": USERNAME}
+                      })
+                  except Exception as e:
+                      print(f"Error parsing commit: {e}")
+                      continue
+
+          # 날짜순 정렬, 최신 20개
+          all_events.sort(key=lambda x: x["created_at"], reverse=True)
+          all_events = all_events[:20]
+
+          with open("github-events.json", "w", encoding="utf-8") as f:
+              json.dump(all_events, f, indent=2, ensure_ascii=False)
+
+          print(f"총 {len(all_events)}개 커밋 저장 완료")
+          EOF
+
+      - name: Commit changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add github-events.json
-          git diff --staged --quiet && echo "No changes" || \
-            git commit -m "chore: sync github events [skip ci]" && git push
+          if git diff --staged --quiet; then
+            echo "변경 없음"
+          else
+            git commit -m "chore: update github commits [skip ci]"
+            git push
+          fi
