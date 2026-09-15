@@ -1,5 +1,25 @@
 [
   {
+    "id": "81650d95770ee91e900f01471200f5db75c1441d",
+    "type": "PushEvent",
+    "repo": {
+      "name": "Kimwonbeom0102/DashBoard",
+      "url": "https://github.com/Kimwonbeom0102/DashBoard"
+    },
+    "payload": {
+      "commits": [
+        {
+          "sha": "81650d9",
+          "message": "Update update-events.yml"
+        }
+      ]
+    },
+    "created_at": "2026-09-15T19:06:14Z",
+    "actor": {
+      "login": "Kimwonbeom0102"
+    }
+  },
+  {
     "id": "0dc2bcdbe96a0cc75f4d3ae51c05433829cae227",
     "type": "PushEvent",
     "repo": {
@@ -75,26 +95,6 @@
       ]
     },
     "created_at": "2026-09-15T18:36:15Z",
-    "actor": {
-      "login": "Kimwonbeom0102"
-    }
-  },
-  {
-    "id": "14a95e0a6c530cb665bc874ff97b9b1b17d07eeb",
-    "type": "PushEvent",
-    "repo": {
-      "name": "Kimwonbeom0102/DashBoard",
-      "url": "https://github.com/Kimwonbeom0102/DashBoard"
-    },
-    "payload": {
-      "commits": [
-        {
-          "sha": "14a95e0",
-          "message": "Fix conditional statement in update-events.yml"
-        }
-      ]
-    },
-    "created_at": "2026-09-15T18:33:42Z",
     "actor": {
       "login": "Kimwonbeom0102"
     }
