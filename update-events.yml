@@ -77,14 +77,16 @@ jobs:
           print(f"총 {len(all_events)}개 커밋 저장 완료")
           EOF
 
-      - name: Commit changes
+            - name: Commit changes
         run: |
+          echo "=== 현재 파일 내용 (앞 3줄) ==="
+          head -3 github-events.json
+          echo "=== Git status ==="
+          git status
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add github-events.json
-          if git diff --staged --quiet; then
-            echo "변경 없음"
-          else
-            git commit -m "chore: update github commits [skip ci]"
-            git push
-          fi
+          echo "=== Staged diff ==="
+          git diff --staged --stat
+          git commit -m "chore: update github commits [skip ci]" || echo "커밋할 내용 없음"
+          git push || echo "푸시할 내용 없음"
