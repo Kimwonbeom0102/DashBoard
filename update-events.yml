@@ -44,7 +44,7 @@ jobs:
           all_events = []
           for repo in repos:
               full_name = repo["full_name"]
-              commits = fetch(f"https://api.github.com/repos/{full_name}/commits?per_page=5&author={USERNAME}")
+              commits = fetch(f"https://api.github.com/repos/{full_name}/commits?per_page=1&author={USERNAME}")
               for c in commits:
                   try:
                       all_events.append({
@@ -69,7 +69,6 @@ jobs:
 
           # 날짜순 정렬, 최신 20개
           all_events.sort(key=lambda x: x["created_at"], reverse=True)
-          all_events = all_events[:20]
 
           with open("github-events.json", "w", encoding="utf-8") as f:
               json.dump(all_events, f, indent=2, ensure_ascii=False)
