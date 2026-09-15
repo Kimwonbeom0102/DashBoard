@@ -36,7 +36,7 @@ jobs:
                   with urllib.request.urlopen(req) as r:
                       return json.loads(r.read())
               except Exception as e:
-                  print(f"Error: {url}: {e}")
+                  print(f"Error fetching {url}: {e}")
                   return []
 
           repos = fetch("https://api.github.com/user/repos?per_page=100&type=owner")
