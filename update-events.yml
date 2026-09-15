@@ -38,7 +38,7 @@ jobs:
                   return []
 
           # 내 모든 저장소 목록
-          repos = fetch("https://api.github.com/user/repos?per_page=100&type=owner&affiliation=owner")
+          repos = fetch("https://api.github.com/user/repos?per_page=100&type=owner")
           print(f"저장소 수: {len(repos)}")
 
           all_events = []
