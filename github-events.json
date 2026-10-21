@@ -1,5 +1,25 @@
 [
   {
+    "id": "ebdc41d6551df56c3cd77cdae002a297982b017e",
+    "type": "PushEvent",
+    "repo": {
+      "name": "Kimwonbeom0102/DashBoard",
+      "url": "https://github.com/Kimwonbeom0102/DashBoard"
+    },
+    "payload": {
+      "commits": [
+        {
+          "sha": "ebdc41d",
+          "message": "chore: update github commits [skip ci]"
+        }
+      ]
+    },
+    "created_at": "2026-10-21T15:15:39Z",
+    "actor": {
+      "login": "Kimwonbeom0102"
+    }
+  },
+  {
     "id": "cc7b22321fd149eddbca8f8a91153cb394e3ebe6",
     "type": "PushEvent",
     "repo": {
@@ -15,26 +35,6 @@
       ]
     },
     "created_at": "2026-10-21T10:13:54Z",
-    "actor": {
-      "login": "Kimwonbeom0102"
-    }
-  },
-  {
-    "id": "1828a2e44cb944a3f0b4264e3375254555995a0e",
-    "type": "PushEvent",
-    "repo": {
-      "name": "Kimwonbeom0102/DashBoard",
-      "url": "https://github.com/Kimwonbeom0102/DashBoard"
-    },
-    "payload": {
-      "commits": [
-        {
-          "sha": "1828a2e",
-          "message": "chore: update github commits [skip ci]"
-        }
-      ]
-    },
-    "created_at": "2026-10-21T10:09:52Z",
     "actor": {
       "login": "Kimwonbeom0102"
     }
