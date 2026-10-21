@@ -1,6 +1,26 @@
 [
   {
-    "id": "040406882a6bfdcd16c79979bfa4bee091c6335f",
+    "id": "c51bed37cda53c0db4774963226c84aac6895624",
+    "type": "PushEvent",
+    "repo": {
+      "name": "Kimwonbeom0102/nfc-card-manufacturing",
+      "url": "https://github.com/Kimwonbeom0102/nfc-card-manufacturing"
+    },
+    "payload": {
+      "commits": [
+        {
+          "sha": "c51bed3",
+          "message": "NfcLaserMarker 초기 커밋"
+        }
+      ]
+    },
+    "created_at": "2026-10-21T07:59:47Z",
+    "actor": {
+      "login": "Kimwonbeom0102"
+    }
+  },
+  {
+    "id": "75f5a66801400678f70aa168d6787d4c707a5fcb",
     "type": "PushEvent",
     "repo": {
       "name": "Kimwonbeom0102/DashBoard",
@@ -9,12 +29,12 @@
     "payload": {
       "commits": [
         {
-          "sha": "0404068",
+          "sha": "75f5a66",
           "message": "chore: update github commits [skip ci]"
         }
       ]
     },
-    "created_at": "2026-10-20T23:53:13Z",
+    "created_at": "2026-10-21T04:49:22Z",
     "actor": {
       "login": "Kimwonbeom0102"
     }
@@ -375,26 +395,6 @@
       ]
     },
     "created_at": "2025-05-06T09:23:38Z",
-    "actor": {
-      "login": "Kimwonbeom0102"
-    }
-  },
-  {
-    "id": "bde383700ff1bbec173b757acc0e1b98283f23af",
-    "type": "PushEvent",
-    "repo": {
-      "name": "Kimwonbeom0102/CSharp_Study_Scripts",
-      "url": "https://github.com/Kimwonbeom0102/CSharp_Study_Scripts"
-    },
-    "payload": {
-      "commits": [
-        {
-          "sha": "bde3837",
-          "message": "Update README.md"
-        }
-      ]
-    },
-    "created_at": "2025-04-07T17:10:23Z",
     "actor": {
       "login": "Kimwonbeom0102"
     }
