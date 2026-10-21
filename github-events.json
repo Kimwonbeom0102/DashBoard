@@ -1,5 +1,45 @@
 [
   {
+    "id": "cc7b22321fd149eddbca8f8a91153cb394e3ebe6",
+    "type": "PushEvent",
+    "repo": {
+      "name": "Kimwonbeom0102/nfc-card-shipexporter",
+      "url": "https://github.com/Kimwonbeom0102/nfc-card-shipexporter"
+    },
+    "payload": {
+      "commits": [
+        {
+          "sha": "cc7b223",
+          "message": "ShipExporter 초기 커밋"
+        }
+      ]
+    },
+    "created_at": "2026-10-21T10:13:54Z",
+    "actor": {
+      "login": "Kimwonbeom0102"
+    }
+  },
+  {
+    "id": "1828a2e44cb944a3f0b4264e3375254555995a0e",
+    "type": "PushEvent",
+    "repo": {
+      "name": "Kimwonbeom0102/DashBoard",
+      "url": "https://github.com/Kimwonbeom0102/DashBoard"
+    },
+    "payload": {
+      "commits": [
+        {
+          "sha": "1828a2e",
+          "message": "chore: update github commits [skip ci]"
+        }
+      ]
+    },
+    "created_at": "2026-10-21T10:09:52Z",
+    "actor": {
+      "login": "Kimwonbeom0102"
+    }
+  },
+  {
     "id": "c51bed37cda53c0db4774963226c84aac6895624",
     "type": "PushEvent",
     "repo": {
@@ -15,26 +55,6 @@
       ]
     },
     "created_at": "2026-10-21T07:59:47Z",
-    "actor": {
-      "login": "Kimwonbeom0102"
-    }
-  },
-  {
-    "id": "75f5a66801400678f70aa168d6787d4c707a5fcb",
-    "type": "PushEvent",
-    "repo": {
-      "name": "Kimwonbeom0102/DashBoard",
-      "url": "https://github.com/Kimwonbeom0102/DashBoard"
-    },
-    "payload": {
-      "commits": [
-        {
-          "sha": "75f5a66",
-          "message": "chore: update github commits [skip ci]"
-        }
-      ]
-    },
-    "created_at": "2026-10-21T04:49:22Z",
     "actor": {
       "login": "Kimwonbeom0102"
     }
@@ -375,26 +395,6 @@
       ]
     },
     "created_at": "2025-07-08T07:32:42Z",
-    "actor": {
-      "login": "Kimwonbeom0102"
-    }
-  },
-  {
-    "id": "f936d37fd7d16c1c64c363464bda7f77c2b07129",
-    "type": "PushEvent",
-    "repo": {
-      "name": "Kimwonbeom0102/PersonalMission",
-      "url": "https://github.com/Kimwonbeom0102/PersonalMission"
-    },
-    "payload": {
-      "commits": [
-        {
-          "sha": "f936d37",
-          "message": "Initial commit without .vs folder"
-        }
-      ]
-    },
-    "created_at": "2025-05-06T09:23:38Z",
     "actor": {
       "login": "Kimwonbeom0102"
     }
