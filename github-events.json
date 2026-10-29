@@ -1,6 +1,46 @@
 [
   {
-    "id": "c49baa575be3c93b053ada5130e6e5c9da247f75",
+    "id": "02cbada5636a77a90a79700a3f842be06225dfd2",
+    "type": "PushEvent",
+    "repo": {
+      "name": "Kimwonbeom0102/course-recommender",
+      "url": "https://github.com/Kimwonbeom0102/course-recommender"
+    },
+    "payload": {
+      "commits": [
+        {
+          "sha": "02cbada",
+          "message": "docs: 원격 저장소 연결 완료 반영 (보안 백로그 git 트리거 전체 종료)"
+        }
+      ]
+    },
+    "created_at": "2026-10-29T16:05:19Z",
+    "actor": {
+      "login": "Kimwonbeom0102"
+    }
+  },
+  {
+    "id": "ed39ae808f2e58822ecebc771eab696b0dff3448",
+    "type": "PushEvent",
+    "repo": {
+      "name": "Kimwonbeom0102/ocr-suite",
+      "url": "https://github.com/Kimwonbeom0102/ocr-suite"
+    },
+    "payload": {
+      "commits": [
+        {
+          "sha": "ed39ae8",
+          "message": "docs: 원격 저장소 연결 완료 반영 (PROGRESS 블로커 항목 정리)"
+        }
+      ]
+    },
+    "created_at": "2026-10-29T16:05:19Z",
+    "actor": {
+      "login": "Kimwonbeom0102"
+    }
+  },
+  {
+    "id": "93044c0327ec9897035c6985031760a6d8732c68",
     "type": "PushEvent",
     "repo": {
       "name": "Kimwonbeom0102/DashBoard",
@@ -9,12 +49,12 @@
     "payload": {
       "commits": [
         {
-          "sha": "c49baa5",
+          "sha": "93044c0",
           "message": "chore: update github commits [skip ci]"
         }
       ]
     },
-    "created_at": "2026-10-29T01:48:34Z",
+    "created_at": "2026-10-29T08:29:53Z",
     "actor": {
       "login": "Kimwonbeom0102"
     }
@@ -355,46 +395,6 @@
       ]
     },
     "created_at": "2025-07-08T07:34:20Z",
-    "actor": {
-      "login": "Kimwonbeom0102"
-    }
-  },
-  {
-    "id": "495c7b98343328a57cf68b7b9687d9f73aa35091",
-    "type": "PushEvent",
-    "repo": {
-      "name": "Kimwonbeom0102/2D_RhythmGame",
-      "url": "https://github.com/Kimwonbeom0102/2D_RhythmGame"
-    },
-    "payload": {
-      "commits": [
-        {
-          "sha": "495c7b9",
-          "message": "Update README.md"
-        }
-      ]
-    },
-    "created_at": "2025-07-08T07:33:32Z",
-    "actor": {
-      "login": "Kimwonbeom0102"
-    }
-  },
-  {
-    "id": "908c5eefcd631822c0572d88b71e1eb1c760aa10",
-    "type": "PushEvent",
-    "repo": {
-      "name": "Kimwonbeom0102/csharp-data-structures",
-      "url": "https://github.com/Kimwonbeom0102/csharp-data-structures"
-    },
-    "payload": {
-      "commits": [
-        {
-          "sha": "908c5ee",
-          "message": "Update README.md"
-        }
-      ]
-    },
-    "created_at": "2025-07-08T07:32:42Z",
     "actor": {
       "login": "Kimwonbeom0102"
     }
