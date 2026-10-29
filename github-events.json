@@ -1,6 +1,6 @@
 [
   {
-    "id": "02cbada5636a77a90a79700a3f842be06225dfd2",
+    "id": "39011b5be735fbe2c0525124a7e4433f42e81e55",
     "type": "PushEvent",
     "repo": {
       "name": "Kimwonbeom0102/course-recommender",
@@ -9,18 +9,18 @@
     "payload": {
       "commits": [
         {
-          "sha": "02cbada",
-          "message": "docs: 원격 저장소 연결 완료 반영 (보안 백로그 git 트리거 전체 종료)"
+          "sha": "39011b5",
+          "message": "docs: 실사용 테스트 로그 양식 개편 + 파일명 변경"
         }
       ]
     },
-    "created_at": "2026-10-29T16:05:19Z",
+    "created_at": "2026-10-29T16:40:24Z",
     "actor": {
       "login": "Kimwonbeom0102"
     }
   },
   {
-    "id": "ed39ae808f2e58822ecebc771eab696b0dff3448",
+    "id": "8db9872b5b5cf3f86175c1aa94c3a3b60a362b7e",
     "type": "PushEvent",
     "repo": {
       "name": "Kimwonbeom0102/ocr-suite",
@@ -29,18 +29,18 @@
     "payload": {
       "commits": [
         {
-          "sha": "ed39ae8",
-          "message": "docs: 원격 저장소 연결 완료 반영 (PROGRESS 블로커 항목 정리)"
+          "sha": "8db9872",
+          "message": "docs: 기획 md 신설 + 블로그 발행 체계 구축"
         }
       ]
     },
-    "created_at": "2026-10-29T16:05:19Z",
+    "created_at": "2026-10-29T16:13:16Z",
     "actor": {
       "login": "Kimwonbeom0102"
     }
   },
   {
-    "id": "93044c0327ec9897035c6985031760a6d8732c68",
+    "id": "0950a502b015944731df32e8f7754a9a5b271599",
     "type": "PushEvent",
     "repo": {
       "name": "Kimwonbeom0102/DashBoard",
@@ -49,12 +49,12 @@
     "payload": {
       "commits": [
         {
-          "sha": "93044c0",
+          "sha": "0950a50",
           "message": "chore: update github commits [skip ci]"
         }
       ]
     },
-    "created_at": "2026-10-29T08:29:53Z",
+    "created_at": "2026-10-29T16:08:03Z",
     "actor": {
       "login": "Kimwonbeom0102"
     }
